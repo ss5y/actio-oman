@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actio Oman</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Tajawal', sans-serif;
+      }
+    </style>
+    <script>
+      function toggleLanguage(lang) {
+        const arElements = document.querySelectorAll('[data-lang="ar"]');
+        const enElements = document.querySelectorAll('[data-lang="en"]');
+        if (lang === 'ar') {
+          arElements.forEach(e => e.style.display = 'block');
+          enElements.forEach(e => e.style.display = 'none');
+          document.documentElement.lang = 'ar';
+          document.documentElement.dir = 'rtl';
+        } else {
+          arElements.forEach(e => e.style.display = 'none');
+          enElements.forEach(e => e.style.display = 'block');
+          document.documentElement.lang = 'en';
+          document.documentElement.dir = 'ltr';
+        }
+      }
+      window.onload = () => toggleLanguage('ar');
+    </script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Actio Oman</h1>
+        <div>
+          <button onclick="toggleLanguage('ar')" class="px-2 text-sm">🇸🇦 عربي</button>
+          <button onclick="toggleLanguage('en')" class="px-2 text-sm">🇺🇸 English</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-blue-100 text-center py-16">
+      <div data-lang="ar">
+        <h2 class="text-4xl font-bold mb-4">مرحبًا بكم في Actio Oman</h2>
+        <p class="text-lg mb-6">اكتشف أفضل المنتجات بأعلى جودة.</p>
+        <a href="#products" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">تسوق الآن</a>
+      </div>
+      <div data-lang="en" class="hidden">
+        <h2 class="text-4xl font-bold mb-4">Welcome to Actio Oman</h2>
+        <p class="text-lg mb-6">Discover top-quality products at the best prices.</p>
+        <a href="#products" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Shop Now</a>
+      </div>
+    </section>
+
+    <section id="products" class="py-16 px-4">
+      <div class="container mx-auto">
+        <div data-lang="ar">
+          <h3 class="text-3xl font-semibold text-center mb-8">منتجاتنا</h3>
+        </div>
+        <div data-lang="en" class="hidden">
+          <h3 class="text-3xl font-semibold text-center mb-8">Our Products</h3>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <img src="https://via.placeholder.com/300" alt="Product" class="w-full rounded-md mb-4">
+            <div data-lang="ar">
+              <h4 class="text-xl font-semibold mb-2">اسم المنتج</h4>
+              <p class="text-gray-600 mb-2">وصف مختصر للمنتج.</p>
+              <p class="text-blue-600 font-bold mb-4">10 ريال</p>
+              <a href="https://wa.me/96800000000" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">اطلب عبر واتساب</a>
+            </div>
+            <div data-lang="en" class="hidden">
+              <h4 class="text-xl font-semibold mb-2">Product Name</h4>
+              <p class="text-gray-600 mb-2">Short product description.</p>
+              <p class="text-blue-600 font-bold mb-4">10 OMR</p>
+              <a href="https://wa.me/96800000000" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Order via WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-gray-100 py-16 px-4">
+      <div class="container mx-auto text-center">
+        <div data-lang="ar">
+          <h3 class="text-3xl font-semibold mb-4">من نحن</h3>
+          <p class="max-w-2xl mx-auto">Actio Oman هو متجر عماني يقدم منتجات أصلية وجودة عالية بأسعار منافسة. نسعى لتقديم أفضل تجربة تسوق عبر الإنترنت لعملائنا.</p>
+        </div>
+        <div data-lang="en" class="hidden">
+          <h3 class="text-3xl font-semibold mb-4">About Us</h3>
+          <p class="max-w-2xl mx-auto">Actio Oman is an Omani store offering original, high-quality products at competitive prices. We aim to provide the best online shopping experience for our customers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 px-4">
+      <div class="container mx-auto text-center">
+        <div data-lang="ar">
+          <h3 class="text-3xl font-semibold mb-4">اتصل بنا</h3>
+          <p class="mb-4">راسلنا عبر:</p>
+        </div>
+        <div data-lang="en" class="hidden">
+          <h3 class="text-3xl font-semibold mb-4">Contact Us</h3>
+          <p class="mb-4">Reach us via:</p>
+        </div>
+        <div class="flex justify-center space-x-4 rtl:space-x-reverse">
+          <a href="https://wa.me/96800000000" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded">WhatsApp</a>
+          <a href="https://www.instagram.com/actiostore.om" target="_blank" class="bg-pink-500 text-white px-4 py-2 rounded">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-200 text-center py-4 mt-8">
+      <p data-lang="ar">© 2025 Actio Oman. جميع الحقوق محفوظة.</p>
+      <p data-lang="en" class="hidden">© 2025 Actio Oman. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
